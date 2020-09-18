@@ -3,7 +3,16 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        queryset = super(PublishedManager, self).get_queryset()
+        queryset = queryset.filter(status='published')
+        return queryset
+    
+
 class Post(models.Model):
+    objects = models.Manager() # default manager
+    published = PublishedManager() # custom published manager
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published')

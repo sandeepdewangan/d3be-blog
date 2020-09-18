@@ -1,3 +1,27 @@
 <h1>{{ post.title }}</h1>
 {{ post.author }} | {{ post.created }}
 <p> {{ post.body }}</p>
+
+<h3>Comments</h3>
+
+
+{% comment %}
+    The {% with %} template tag is useful for avoiding hitting the database or accessing expensive methods multiple times.
+{% endcomment %}
+    
+{% with comments.count as total_comments %}
+    {{ total_comments }} comment{{ total_comments|pluralize }}
+{% endwith %}
+
+
+{% for comment in comments %}
+    <strong>Comment {{ forloop.counter }} by: {{ comment.name }}</strong> {{ comemnt.created }}
+    <p>{{ comment.body|linebreaks }}</p>
+
+{% empty %}
+    <p> No comments to show. </p>
+{% endfor %}
+
+
+    
+    

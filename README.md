@@ -30,3 +30,7 @@ Django comes with a sitemap framework, which allows you to generate sitemaps for
 
 ### Creating feeds for your blog posts (not implemented)
 Django has a built-in syndication feed framework that you can use to dynamically generate RSS or Atom feeds in a similar manner to creating sitemaps using the site's framework.
+
+
+### Full text search with PostgreSQL (not implemented)
+First learn about PostgreSQL in ubuntu and its user creation.

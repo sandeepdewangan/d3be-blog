@@ -2,11 +2,18 @@ from django.shortcuts import render, get_object_or_404
 # from projects
 from .models import Post
 from .forms import CommentForm
+# thrid party apps
+from taggit.models import Tag
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
     posts = Post.published.all()
-    return render(request, 'blog/post/list.html', {'posts': posts})
+    selected_tag = None
+    if tag_slug:
+        selected_tag = get_object_or_404(Tag, slug=tag_slug)
+        posts = posts.filter(tags=selected_tag)
+
+    return render(request, 'blog/post/list.html', {'posts': posts, 'selected_tag': selected_tag})
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post, status='published', publish__year=year, publish__month=month, publish__day=day)

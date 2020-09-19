@@ -23,12 +23,12 @@
 {% endcomment %}
     
 {% with comments.count as total_comments %}
-    {{ total_comments }} comment{{ total_comments|pluralize }}
+    {{ total_comments }} comment(s)
 {% endwith %}
 
 
 {% for comment in comments %}
-    <strong>Comment {{ forloop.counter }} by: {{ comment.name }}</strong> {{ comemnt.created }}
+    <br/><strong>Comment {{ forloop.counter }} by: {{ comment.name }}</strong> {{ comemnt.created }}
     <p>{{ comment.body|linebreaks }}</p>
 
 {% empty %}

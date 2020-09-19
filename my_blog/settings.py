@@ -31,7 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'blog.apps.BlogConfig', # my blog app
+    # my apps
+    'blog.apps.BlogConfig',
+    #third party apps
+    'taggit', # for providing tagging functionality
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,3 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# taggit app case sensitivity
+TAGGIT_CASE_INSENSITIVE = True

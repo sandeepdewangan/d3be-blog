@@ -18,3 +18,10 @@ Example:
 >>> post.tags.all()
 <QuerySet [<Tag: web development>, <Tag: django>, <Tag: python>]>
 ```
+
+### Custom template tags
+Django provides the following helper functions that allow you to create your own template tags in an easy manner:
+* simple_tag : Processes the data and returns a string
+* inclusion_tag : Processes the data and returns a rendered template
+
+

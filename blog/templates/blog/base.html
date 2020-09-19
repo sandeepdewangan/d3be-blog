@@ -1,8 +1,12 @@
+{% load blog_tags %}
 <!doctype html>
 <html lang="en">
   <body>
       {% block content %}
           
       {% endblock content %}
+
+      <hr/>
+      There are {% total_posts %} posts so far.
   </body>
 </html>

@@ -1,0 +1,25 @@
+{% load blog_tags %}
+
+{% if query %}
+    <h1>Search results for {{ query }}</h1>
+    
+    {% with results.count as total_results %}
+        found {{ total_results }} result(s)...
+    {% endwith %}
+           
+    {% for post in results %}
+        <a href="{{ post.get_absolute_url }}"><h4> {{ post.title }} </h4></a>
+        {{ post.body|markdown|truncatewords_html:5 }}
+    {% empty %}
+        <p>There are no results for your query.</p>
+    {% endfor %}
+        
+{% else %}
+    <h1> Search for post</h1>
+    <form method="GET">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="search" />
+    </form>
+{% endif %}
+    

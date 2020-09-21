@@ -3,6 +3,7 @@
 
 
 {% block content %}
+<a href='{% url 'blog:post_search' %}'>search posts</a>
 <h1>My Blog </h1>
     {% for post in posts %}
         <a href="{{ post.get_absolute_url }}">{{ post.title }}</a><br/>

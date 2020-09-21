@@ -32,5 +32,33 @@ Django comes with a sitemap framework, which allows you to generate sitemaps for
 Django has a built-in syndication feed framework that you can use to dynamically generate RSS or Atom feeds in a similar manner to creating sitemaps using the site's framework.
 
 
-### Full text search with PostgreSQL (not implemented)
-First learn about PostgreSQL in ubuntu and its user creation.
+### Full text search with PostgreSQL
+
+**Install Postgres**\
+sudo apt-get install postgresql postgresql-contrib \
+pip install psycopg2-binary==2.8.4
+
+
+**Link for Help**\
+[click here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04)
+
+
+**Login Password Change for PostgreSQL Users**\
+For password less login:\
+`sudo -u user_name psql db_name` \
+
+To reset the password if you have forgotten: \
+`ALTER USER user_name WITH PASSWORD 'new_password';`
+
+
+**Peer Password Error Solution**\
+Goto \
+/etc/postgresql/.../main/pg_ident.conf \
+
+Make Changes \
+`host all all        md5`
+
+#### Search
+
+* Search with single field - `Post.objects.filter(body__search='django')`
+* Search with multiple fields - `Post.objects.annotate(search=SearchVector('title', 'body'),).filter(search='django')`

@@ -66,3 +66,7 @@ Make Changes \
 
 ### Ranking Search Results
 With ranking search results one can get the most repeated word from the match at the top in the search results.
+
+
+### Weighting queries
+You can use this to give more relevance to posts that are matched by title rather than by content.

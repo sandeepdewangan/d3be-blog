@@ -62,3 +62,7 @@ Make Changes \
 
 * Search with single field - `Post.objects.filter(body__search='django')`
 * Search with multiple fields - `Post.objects.annotate(search=SearchVector('title', 'body'),).filter(search='django')`
+
+
+### Ranking Search Results
+With ranking search results one can get the most repeated word from the match at the top in the search results.

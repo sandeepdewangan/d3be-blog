@@ -78,3 +78,4 @@ In order to use trigrams in PostgreSQL, you will need to install the `pg_trgm` e
 `psql blog` \
 Then, execute the following command to install the pg_trgm extension: \
 `CREATE EXTENSION pg_trgm;`
+

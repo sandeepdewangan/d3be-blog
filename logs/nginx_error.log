@@ -1,0 +1,2 @@
+2020/09/22 22:36:25 [error] 4985#4985: *33 connect() to unix:///tmp/my_blog.sock failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: www.myblog.com, request: "GET /blog/ HTTP/1.1", upstream: "uwsgi://unix:///tmp/my_blog.sock:", host: "127.0.0.1:88"
+2020/09/22 22:36:27 [error] 4985#4985: *33 connect() to unix:///tmp/my_blog.sock failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: www.myblog.com, request: "GET /blog/ HTTP/1.1", upstream: "uwsgi://unix:///tmp/my_blog.sock:", host: "127.0.0.1:88"

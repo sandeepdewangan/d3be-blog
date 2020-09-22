@@ -70,3 +70,11 @@ With ranking search results one can get the most repeated word from the match at
 
 ### Weighting queries
 You can use this to give more relevance to posts that are matched by title rather than by content.
+
+
+### Searching with trigram similarity
+
+In order to use trigrams in PostgreSQL, you will need to install the `pg_trgm` extension first. Execute the following command from the shell to connect to your database: \
+`psql blog` \
+Then, execute the following command to install the pg_trgm extension: \
+`CREATE EXTENSION pg_trgm;`
